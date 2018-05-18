@@ -13,7 +13,7 @@ export default class Note extends Component {
 
       this.edit = this.edit.bind(this)
       this.remove = this.remove.bind(this)
-      this.save = this.renderDisplay.bind(this)
+      this.save = this.save.bind(this)
       this.renderForm = this.renderForm.bind(this)
       this.renderDisplay = this.renderDisplay.bind(this)
     }
@@ -30,14 +30,14 @@ export default class Note extends Component {
 
 
     	save() {
-    		alert('alert')
+    		alert(this._newText.value)
     	}
 
     	renderForm() {
     		return (
     			<div className="note">
     				<form>
-    					<textarea ref={input => this._newText = input}/>
+    					<textarea ref={input => this._newText = input } />
     					<button onClick={this.save}><FaFloppyO /></button>
     				</form>
     			</div>
