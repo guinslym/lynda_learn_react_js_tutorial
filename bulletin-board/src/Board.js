@@ -58,8 +58,8 @@ class Board extends Component{
 
 	eachNote(note, i) {
 		return (
-			<Note key={i}
-				  index={i}
+      <Note key={note.id}
+				  index={note.id}
 				  onChange={this.update}
           onRemove={this.remove}>
 				  {note.note}
