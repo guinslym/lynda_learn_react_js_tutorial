@@ -25,7 +25,7 @@ export default class Note extends Component {
   	}
 
   	remove() {
-  		alert('removing note')
+  		this.props.onRemove(this.props.index)
   	}
 
 
