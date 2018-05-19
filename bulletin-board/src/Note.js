@@ -42,7 +42,7 @@ export default class Note extends Component {
     			<div className="note">
     				<form onSubmit={this.save}>
     					<textarea ref={input => this._newText = input } />
-    					<button onClick={this.save}><FaFloppyO /></button>
+    					<button onClick={this.save}  id="save"><FaFloppyO /></button>
     				</form>
     			</div>
     		)
