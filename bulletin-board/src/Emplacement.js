@@ -13,7 +13,27 @@ export default class Class extends Component {
   }
 
   componentWillMount() {
-    
+
+  }
+
+  add(){
+
+  }
+
+  nextId(){
+
+  }
+
+  update(){
+
+  }
+
+  remove(){
+
+  }
+
+  eachNote(){
+
   }
 
     render() {
