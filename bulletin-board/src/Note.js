@@ -14,8 +14,6 @@ export default class Note extends Component {
       this.edit = this.edit.bind(this)
       this.remove = this.remove.bind(this)
       this.save = this.save.bind(this)
-      this.renderForm = this.renderForm.bind(this)
-      this.renderDisplay = this.renderDisplay.bind(this)
       this.randomBetween = this.randomBetween.bind(this)
     }
 
@@ -56,35 +54,30 @@ export default class Note extends Component {
         })
     	}
 
-    	renderForm() {
-    		return (
-    			<div className="note" style={this.style}>
-    				<form onSubmit={this.save}>
-    					<textarea ref={input => this._newText = input }
-                defaultValue={this.props.children} />
-    					<button onClick={this.save}  id="save"><FaFloppyO /></button>
-    				</form>
-    			</div>
-    		)
-    	}
-
-    renderDisplay() {
-  		return (
-  			<div className="note"  style={this.style}>
-  				<p>{this.props.children}</p>
-  				<span>
-  					<button onClick={this.edit} id="edit"><FaPencil /></button>
-  					<button onClick={this.remove} id="remove"><FaTrash /></button>
-  				</span>
-  			</div>
-  		)
-  	}
 
     render(){
         if(this.state.editing){
-          return this.renderForm()
+          // Render Form
+          return (
+      			<div className="note" style={this.style}>
+      				<form onSubmit={this.save}>
+      					<textarea ref={input => this._newText = input }
+                  defaultValue={this.props.children} />
+      					<button onClick={this.save}  id="save"><FaFloppyO /></button>
+      				</form>
+      			</div>
+      		)
         }else{
-          return this.renderDisplay()
+          // Render Display
+          return (
+      			<div className="note"  style={this.style}>
+      				<p>{this.props.children}</p>
+      				<span>
+      					<button onClick={this.edit} id="edit"><FaPencil /></button>
+      					<button onClick={this.remove} id="remove"><FaTrash /></button>
+      				</span>
+      			</div>
+      		)
         }
     }
 
