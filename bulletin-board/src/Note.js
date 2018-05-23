@@ -90,3 +90,28 @@ export default class Note extends Component {
 
 
 }
+
+/*
+2.1 {this.props.children}
+<textarea ref={input => this._newText = input }
+  defaultValue=c {this.props.children} />
+
+Whatever the CURRENT value of the NOTE we will render the TEXTAREA of this EDIT FORM with its content.
+{this.props.children}
+
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+2.2 renderDisplay()
+<p>{this.props.children}</p>
+
+renderDisplay will going to DISPLAY anything that contains the PARENT
+or the value of the {note.note} in Board.eachNote
+
+return (
+  <Note key={note.id}
+      index={note.id}
+      onChange={this.update}
+      onRemove={this.remove}>
+      {note.note}
+    </Note>
+)
+*/
